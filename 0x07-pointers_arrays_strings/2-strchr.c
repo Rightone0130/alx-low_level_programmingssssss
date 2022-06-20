@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * _strspn - gets the length of a prefix substring.
- *
- * @s: string.
- * @accept: bytes.
- * Return: unsigned int.
+ * *_strchr - fills memory with a constant byte.
+ * @s: pointer to put the constant
+ * @c: constant
+ * Return: s
  */
-unsigned int _strspn(char *s, char *accept)
-{
-	unsigned int i, j;
 
-	for (i = 0; s[i] != '\0'; i++)
+char *_strchr(char *s, char c)
+{
+	int i;
+
+	for (i = 0; s[i] >= '\0'  ; i++)
 	{
-		for (j = 0; accept[j] != s[i]; j++)
+		if (s[i] == c)
 		{
-			if (accept[j] == '\0')
-				return (i);
+			return (s + i);
 		}
 	}
-	return (i);
+
+	return ('\0');
 }
